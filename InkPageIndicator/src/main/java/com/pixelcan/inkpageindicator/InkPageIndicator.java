@@ -652,7 +652,9 @@ public class InkPageIndicator extends View implements ViewPager.OnPageChangeList
     }
 
     private void setDotRevealFraction(int dot, float fraction) {
-        dotRevealFractions[dot] = fraction;
+        if(dot < dotRevealFractions.length) {
+            dotRevealFractions[dot] = fraction;
+        }
         postInvalidateOnAnimation();
     }
 
